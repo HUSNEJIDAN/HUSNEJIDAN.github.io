@@ -1,0 +1,87 @@
+#include <iostream>
+using namespace std;
+
+void showmenu() {
+  
+  cout<<"      MENU"<<endl<<endl;
+  cout<<"1.balance"<<endl;
+  cout<<"2.deposit"<<endl;
+  cout<<"3.withdraw"<<endl;
+  cout<<"4.money transfer"<<endl;
+  cout<<"5.exit"<<endl<<endl;
+}
+int main(){
+  int pin;
+  int y=1;
+  char again='y';
+while(again=='y'){
+  cout<<"enter your pin number:";
+  cin>>pin;
+  if(pin==2002){
+  cout<<endl;
+  int option;
+  int balance=500;
+  do{
+  showmenu();
+  cout<<" enter option: ";
+  cin>>option;
+  switch (option){
+    case 1:cout<<"balance is  "<<balance<<"£"<<endl<<endl;
+    break;
+    case 2:cout<<"deposit amount: ";
+    double deposit;
+    cin>>deposit;
+    balance+=deposit;
+      cout<<"your balance is "<<balance<<endl<<endl<<endl;
+     // cout<<"after deposit balance is "<<balance<<"£";
+    break;
+    case 3:cout<<"withdraw amount: ";
+    double withdrawamount;
+    cin>> withdrawamount;
+    if(withdrawamount<=balance){
+      balance -=withdrawamount;
+      cout<<"your remaining balance is "<<balance<<endl<<endl;}
+    else
+      cout<<"not enough money available"<<endl<<endl;
+    break;
+    case 4:
+    string name;
+      int ACnum;
+      int amount;
+    cout << "Enter account name:";
+        cin.ignore();
+ 
+        // To use space in string
+        getline(cin, name);
+ 
+    cout<<"enter the account number: ";
+    cin>>ACnum;
+    cout<<"enter the amount:";
+    cin>>amount;
+      cout<<endl;
+    if(amount<=balance)
+    {
+      balance -=amount;
+      cout<<"transection is successful"<<endl<<endl;
+      cout<<"your remaining balance is "<<balance<<endl<<endl;
+      }
+    else
+      cout<<"not enough money available"<<endl;
+  }
+    }
+    
+   while(option!=5);
+ cout<<"thank you for banking with us";
+    break;}
+  else
+    cout<<"you enter a invalid pin"<<endl<<endl;
+ cout<<"do you want to continue with us.if yes then put y "<<endl;
+  cout<<"if you don't want to continue then put n: ";
+
+  cin>>again;
+  if(again=='n'){
+    cout<<endl;
+    cout<<"thank you for banking with us";
+    }
+  }
+  }
